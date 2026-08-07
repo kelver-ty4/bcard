@@ -1,8 +1,20 @@
 <!DOCTYPE html>
 <html>
 <body>
-  <a id="dl" href="card.png" download="BusinessCard.png"></a>
-  <script>document.getElementById("dl").click();</script>
-  <p>If nothing happens, <a href="card.png" download="BusinessCard.png">tap here to download</a></p>
+  <p>Downloading your business card...</p>
+  <script>
+    fetch("card.png")
+      .then(res => res.blob())
+      .then(blob => {
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "BusinessCard.png";
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(url);
+      });
+  </script>
+  <p>If nothing happens, <a href="card.png" download="BusinessCard.png">tap here</a></p>
 </body>
 </html>
