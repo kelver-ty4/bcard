@@ -1,17 +1,8 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta http-equiv="refresh" content="0">
-  <script>
-    window.location.href = "card.png";
-    const a = document.createElement("a");
-    a.href = "card.jpg";
-    a.download = "BusinessCard.png";
-    document.body.appendChild(a);
-    a.click();
-  </script>
-</head>
 <body>
-  <p>Your download will start shortly...</p>
+  <a id="dl" href="card.png" download="BusinessCard.png"></a>
+  <script>document.getElementById("dl").click();</script>
+  <p>If nothing happens, <a href="card.png" download="BusinessCard.png">tap here to download</a></p>
 </body>
 </html>
